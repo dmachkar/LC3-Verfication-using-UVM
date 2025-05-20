@@ -1,0 +1,11 @@
+uvmf:
+  util_components:
+    memaccess_predictor:
+      analysis_exports:
+      - name: memaccess_analysis_predictor_export
+        type: memaccess_in_transaction
+      analysis_ports:
+      - name: memaccess_analysis_predictor_port
+        type: memaccess_out_transaction
+      existing_library_component: 'True'
+      type: predictor

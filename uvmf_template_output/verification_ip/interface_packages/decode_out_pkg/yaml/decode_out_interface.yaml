@@ -1,0 +1,75 @@
+uvmf:
+  interfaces:
+    decode_out:
+      clock: clock
+      config_constraints: []
+      config_vars: []
+      existing_library_component: 'True'
+      gen_inbound_streaming_driver: 'False'
+      hdl_pkg_parameters: []
+      hdl_typedefs:
+      - name: op_t
+        type: enum bit [3:0] {BR=4'b0000, ADD=4'b0001, LD=4'b0010, ST=4'b0011, AND=4'b0101, LDR=4'b0110, STR=4'b0111, NOT=4'b1001, LDI=4'b1010, STI=4'b1011, JMP=4'b1100, LEA=4'b1110}
+      hvl_pkg_parameters: []
+      hvl_typedefs: []
+      parameters: []
+      ports:
+      - dir: input
+        name: out_enable_decode
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: W_Control
+        reset_value: '''bz'
+        width: '2'
+      - dir: input
+        name: Mem_Control
+        reset_value: '''bz'
+        width: '1'
+      - dir: input
+        name: E_Control
+        reset_value: '''bz'
+        width: '6'
+      - dir: input
+        name: IR
+        reset_value: '''bz'
+        width: '16'
+      - dir: input
+        name: npc_out
+        reset_value: '''bz'
+        width: '16'
+      reset: reset
+      reset_assertion_level: 'True'
+      transaction_constraints: []
+      transaction_vars:
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: W_Control
+        type: bit [1:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: Mem_Control
+        type: bit
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: E_Control
+        type: bit [5:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: IR
+        type: bit [15:0]
+        unpacked_dimension: ''
+      - comment: ''
+        iscompare: 'True'
+        isrand: 'False'
+        name: npc_out
+        type: bit [15:0]
+        unpacked_dimension: ''
+      use_dpi_link: 'False'
